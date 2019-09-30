@@ -37,15 +37,16 @@ namespace SuperheroCreator.Controllers
         [HttpPost]
         public ActionResult Create(Superhero superhero)
         {
-            try
+            if (!(superhero.Name is null))
             {
                 context.Superheroes.Add(superhero);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
-                return View();
+                Console.WriteLine("Error creating superhero, name cannot be null");
+                return RedirectToAction("Create");
             }
         }
 
