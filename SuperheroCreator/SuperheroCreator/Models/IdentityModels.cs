@@ -20,6 +20,7 @@ namespace SuperheroCreator.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        DbSet<Superhero> Superheroes { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
