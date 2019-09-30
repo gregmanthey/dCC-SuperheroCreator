@@ -39,7 +39,7 @@ namespace SuperheroCreator.Controllers
         {
             try
             {
-                context.superheroes.Add(superhero);
+                context.Superheroes.Add(superhero);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }

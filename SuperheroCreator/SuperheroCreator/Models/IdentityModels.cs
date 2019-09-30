@@ -20,18 +20,7 @@ namespace SuperheroCreator.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Superhero> superheroes;
-
-        private DbSet<Superhero> GetSuperheroes()
-        {
-            return superheroes;
-        }
-
-        private void SetSuperheroes(DbSet<Superhero> value)
-        {
-            superheroes = value;
-        }
-
+        public DbSet<Superhero> Superheroes { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
