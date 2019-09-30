@@ -30,5 +30,7 @@ namespace SuperheroCreator.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<SuperheroCreator.Models.Superhero> Superheroes { get; set; }
     }
 }
