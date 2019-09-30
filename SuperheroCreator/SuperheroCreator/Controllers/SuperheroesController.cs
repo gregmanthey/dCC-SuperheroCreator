@@ -21,16 +21,16 @@ namespace SuperheroCreator.Controllers
         }
 
         // GET: Superheroes/Details/5
-        public ActionResult Details(Superhero superhero)
+        public ActionResult Details(int id)
         {
-            return View(superhero);
+            return View(context.Superheroes.Where(s => s.Id.Equals(id)).FirstOrDefault());
         }
 
         // GET: Superheroes/Create
         public ActionResult Create()
         {
             Superhero superhero = new Superhero();
-            return Details(superhero);
+            return View(superhero);
         }
 
         // POST: Superheroes/Create
