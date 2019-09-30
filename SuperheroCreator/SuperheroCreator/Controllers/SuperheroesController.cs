@@ -17,20 +17,20 @@ namespace SuperheroCreator.Controllers
         // GET: Superheroes
         public ActionResult Index()
         {
-            return View();
+            return View(context.Superheroes);
         }
 
         // GET: Superheroes/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(Superhero superhero)
         {
-            return View();
+            return View(superhero);
         }
 
         // GET: Superheroes/Create
         public ActionResult Create()
         {
             Superhero superhero = new Superhero();
-            return View(superhero);
+            return Details(superhero);
         }
 
         // POST: Superheroes/Create
